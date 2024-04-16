@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my website</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+        
+    <!--=============== REMIX ICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+
+</head>
+<body>
+    <main>
+    <header>
+            <div class="navContainer">
+                <nav id="navbar">
+                    <div id="logo">
+                        <img src="/static/images/site-logo_2.png" alt="MyOnlineMeal.com">
+                    </div>                    
+                    <ul id="navList">
+                        <li>
+                            <div id="navItems">
+                                <a href="http://127.0.0.1:5000/templates/index1.html" class="active"><i class="fa fa-home"></i>Home</a>
+                                <a href="#services"><i class="fa fa-list"></i>Services</a>
+                                <a href="#contact"><i class="fa fa-comments"></i>Contact Us</a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+    </header>
+
+    <section id="home">
+        <div class="container">
+
+            <div class="home-info">
+              <h3 class="intro">DRIVING CARE IN HEALTHCARE
+                <span class="name"><br>across Kolkata</span></h3>
+                <h3 class="my-profession"><span class="typing"></span></h3>
+                         <p>
+                             <ul class="home-content">
+                              <li>24/7 emergency & medical transportation support.</li>
+                              <li>Ensuring professional medical care throughout the medical transport journey.
+                              </li>
+                            </ul>
+                        </p>
+                        <br>
+                        <a type="button" class="btn" onclick="genMap();">BOOK AMBULANCE</a>
+                         <!-- <input type="button" value="BOOK AMBULANCE" class="btn" onclick="href='http://127.0.0.1:8000'"> -->
+            </div>
+        </div>
+        <img class="home-img" src="/static/images/ambu.jpg" alt="">
+    </section>
+
+
+    <section id="services-container">
+        <h1 id="abc">Our Services</h1>
+        <div id="services">
+            <div class="box">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBRZqauvfw_e5YfOiifXjnqV2bGPSgbQ34U8GhvEmexXCIYwv5W_KuOJOOqnh-dvSybNM&usqp=CAU" alt="">
+                <div class="">
+                    <h2 class="service-heading">Patient Transport</h2>
+                    <p class="center">Patient Transport ambulance is the most basic type of transport available to patients requiring ambulatory support for their healthcare appoints, or for admission to and discharge from hospital.</p>
+                </div>
+                
+            </div>
+            <div class="box">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBRZqauvfw_e5YfOiifXjnqV2bGPSgbQ34U8GhvEmexXCIYwv5W_KuOJOOqnh-dvSybNM&usqp=CAU" alt="">
+                <div class="">
+                    <h2 class="service-heading">Medical Utility Vehicle</h2>
+                    <p class="center">The Medical Utility Vehicle is a state-of-the-art small or large van that is designed to facilitate the movement & transfer of patients.**</p>
+                </div>
+                
+            </div>
+            <div class="box">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBRZqauvfw_e5YfOiifXjnqV2bGPSgbQ34U8GhvEmexXCIYwv5W_KuOJOOqnh-dvSybNM&usqp=CAU" alt="">
+                <div class="">
+                    <h2 class="service-heading">Mortuary</h2>
+                    <p class="center">Mortuary Van/Ambulance helps in the transportation of a deceased patient from one place to another.</p>
+                </div>
+                
+            </div>
+            
+            
+        </div>
+        <div id="services">
+            <div class="box">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBRZqauvfw_e5YfOiifXjnqV2bGPSgbQ34U8GhvEmexXCIYwv5W_KuOJOOqnh-dvSybNM&usqp=CAU" alt="">
+                <div class="">
+                    <h2 class="service-heading">BLS (Basic Life Support)</h2>
+                    <p class="center">BLS Ambulance provides transport to patients who are non ambulatory, bed confined, do not require cardiac monitoring and are in a non-life threatening condition.</p>
+                </div>
+                
+            </div>
+            <div class="box">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBRZqauvfw_e5YfOiifXjnqV2bGPSgbQ34U8GhvEmexXCIYwv5W_KuOJOOqnh-dvSybNM&usqp=CAU" alt="">
+                <div class="">
+                    <h2 class="service-heading">Air Ambulance</h2>
+                    <p class="center">Air ambulances help in transfer of patient across long distances in both emergency and non-emergency situations.</p>
+                </div>
+                
+            </div>
+            <div class="box">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBRZqauvfw_e5YfOiifXjnqV2bGPSgbQ34U8GhvEmexXCIYwv5W_KuOJOOqnh-dvSybNM&usqp=CAU" alt="">
+                <div class="">
+                    <h2 class="service-heading">ALS (Advanced Life Support)</h2>
+                    <p class="center">ALS ambulance is staffed by a Paramedic and is used to transport patients who require high level of care, cardiac monitor and/or a ventilator during transport. It is an I.C.U on wheels.</p>
+                </div>
+                
+            </div>
+            
+        </div>
+    </section>
+
+    <section class="contact section" id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <span class="section-title">Any Querries ?
+            I'M AT YOUR SERVICES</span>
+        
+        <div class="contact__container">
+            <div class="contact__content">
+                <h3 class="contact__title">
+                    <i class="ri-chat-3-line"></i>Talk to us
+                </h3>
+                <div class="contact__info">
+                    <div class="contact__data">
+                        <span class="contact__data-title">Email us</span>
+                        <span class="contact__data-info">SixCodeMinds@gmail.com</span>
+                    </div>
+                    <div class="contact__data">
+                        <span class="contact__data-title">call us</span>
+                        <span class="contact__data-info">xxxxxxxxx</span>
+                        <a href="https://api.whatsapp.com/send?phone=51123456789&text=Hello, more information!" class="contact__button" target="_blank">
+                            write us <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </div>
+                    <div class="contact__data">
+                        <span class="contact__data-title">Massenger</span>
+                        <span class="contact__data-info">sixcodeminds01</span>
+                        <a href="https://m.me/bedimcode" class="contact__button" target="_blank">
+                            write us <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="contact__content">
+                <h3 class="contact__title">
+                    <i class="ri-send-plane-line"></i>
+                    Write us about your quary
+                </h3>
+                <form action="" class="contact__form" id="contact-form">
+                    <div class="contact__form-div">
+                        <label  class="contact__form-tag">Name</label>
+                        <input type="text" name="user_name" required placeholder="Write your name" class="contact__form-input " id="contact-name">
+                    </div>
+                    <div class="contact__form-div">
+                        <label  class="contact__form-tag">Mail</label>
+                        <input type="email" name="user_email" required placeholder="Write your email" class="contact__form-input " id="contact-email">
+                    </div>
+                    <div class="contact__form-div contact__form-area">
+                        <label  class="contact__form-tag">quary</label>
+                        <textarea name="user_project" placeholder="Write your quary" id="contact-project" cols="30" rows="10" class="contact__form-input"></textarea>
+
+                    </div>
+                    <p class="contact__message" id="contact-message"></p>
+                    <button type="submit" class="contact__button">
+                        Submit <i class="ri-arrow-right-up-line"></i>
+                    </button>
+
+                </form>
+            </div>
+        </div>
+
+   </section>
+    
+
+
+
+    
+</main>
+
+    <footer class="footer container">
+        <div class="footer__copy">
+            &#169; SixCodeMinds.ALL Rights Reserved
+        </div>
+        
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" referrerpolicy="no-referrer"></script>
+    <script src="/static/script.js"></script>
+    <script>
+        function genMap()
+        {
+            fetch('http://127.0.0.1:5000/map')
+            .then(()=>window.location.href="info.html")
+        }
+    </script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <html>
+    <head>
+    <script src="https://kit.fontawesome.com/de9d45e1c6.js" crossorigin="anonymous"></script>
+    <meta http-equiv="content-type">
+    <link rel="stylesheet" href="/static/mapliststyle.css">
+    <title>Hospital</title>
+    </head>
+    <body>
+    <div class="twoparts">
+        <div class="container">
+            <div class="containerhead">
+                <label for="Search" class="label1">Choose a Ambulance</label>
+                    <form action="" class="searchbar">
+                    <input type="text" id="myinput" placeholder="Search Nearby Ambulance" onkeyup="searchFun()">
+                    </form>
+                <label for="mention" class="label2">Nearby Ambulences</label>
+            </div>
+    <table  id="mytable">
+    <tr><td>car no</td><td>Distance</td></tr><tr onclick='fetchRowData("WB12B0000(Premium)")'><td class='hfn'>WB12B0000(Premium)</td><td>0</td></tr><tr onclick='fetchRowData("WB12A0001")'><td class='hfn'>WB12A0001</td><td>1</td></tr><tr onclick='fetchRowData("WB12A0004")'><td class='hfn'>WB12A0004</td><td>1</td></tr><tr onclick='fetchRowData("WB12B0002")'><td class='hfn'>WB12B0002</td><td>2</td></tr><tr onclick='fetchRowData("WB31C0001(Premium)")'><td class='hfn'>WB31C0001(Premium)</td><td>3</td></tr><tr onclick='fetchRowData("WB12A0003")'><td class='hfn'>WB12A0003</td><td>4</td></tr><tr onclick='fetchRowData("WB31C0003(Premium)")'><td class='hfn'>WB31C0003(Premium)</td><td>4</td></tr><tr onclick='fetchRowData("WB12A0009")'><td class='hfn'>WB12A0009</td><td>4</td></tr>
+    </table>
+    <div class="button">
+        <a type="button" onclick=window.location='payment.html' class="btn">BOOK AMBULANCE</a>
+    </div>    
+        </div>
+        <div class = container2>
+            <iframe src="hos2map.html" width="1700px" height="900" >
+        </iframe>
+        </div>
+
+        </div>
+        <script>
+        
+        
+        
+             function fetchRowData(name) {
+    // Make an asynchronous request to fetch data using the name of the hospital
+    fetch('http://127.0.0.1:5000/get_data?name=' + encodeURIComponent(name))
+        .then(response => response.json())
+        .then(data => {
+            // Construct the URL with the data parameter using template literals
+            const url = `confirmation.html?name=${encodeURIComponent(data.name)}`;
+            
+            // Navigate to the new URL
+            window.location.replace(url);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}
+
+
+            const searchFun = () => {
+                let filter = document.getElementById('myinput').value.toUpperCase();
+
+                let myTable = document.getElementById('mytable');
+
+                let tr = myTable.getElementsByTagName('tr');
+
+                for (var i = 0; i < tr.length; i++) {
+                    let td = tr[i].getElementsByTagName('td')[0];
+
+                    if (td) {
+                        let textvalue = td.textContent || td.innerHTML;
+
+                        if (textvalue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        }
+                        else 
+                        {
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }
+            }
+            </script>
+            
+    </body>
+    </html>
+    

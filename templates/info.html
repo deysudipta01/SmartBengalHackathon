@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <html>
+    <head>
+    <script src="https://kit.fontawesome.com/de9d45e1c6.js" crossorigin="anonymous"></script>
+    <meta http-equiv="content-type">
+    <link rel="stylesheet" href="/static/mapliststyle.css">
+    <title>Hospital</title>
+    </head>
+    <body>
+    <div class="twoparts">
+        <div class="container">
+            <div class="containerhead">
+                <label for="Search" class="label1">Choose a Hospital</label>
+                    <form action="" class="searchbar">
+                    <input type="text" id="myinput" placeholder="Search Nearby Hospitals....." onkeyup="searchFun()">
+                    </form>
+                <label for="mention" class="label2">Nearby Hospitals</label>
+            </div>
+    <table  id="mytable">
+    <tr><td>Name</td><td>Distance</td></tr><tr onclick=genMap2();><td class='hfn'>Infectious Diseases & Beleghata General Hospital</td><td>0</td></tr><tr onclick=genMap2();><td class='hfn'>Techno India DAMA </td><td>1</td></tr><tr onclick=genMap2();><td class='hfn'>APOLLO GLENEAGLES HOSPITAL</td><td>1</td></tr><tr onclick=genMap2();><td class='hfn'>NRS MEDICAL COLLEGE AND HOSPITAL</td><td>2</td></tr><tr onclick=genMap2();><td class='hfn'>Calcutta National Medical College & Hospital</td><td>2</td></tr><tr onclick=genMap2();><td class='hfn'>Medical College Kolkata</td><td>3</td></tr><tr onclick=genMap2();><td class='hfn'>ECHS Polyclinic Salt Lake</td><td>3</td></tr><tr onclick=genMap2();><td class='hfn'>ESI Hospital PGIMSR</td><td>3</td></tr><tr onclick=genMap2();><td class='hfn'>GD Hospital & Diabetes Institute</td><td>3</td></tr><tr onclick=genMap2();><td class='hfn'>Fortis Hospital, Anandapur</td><td>4</td></tr><tr onclick=genMap2();><td class='hfn'>IPGME&R and SSKM Hospital</td><td>5</td></tr><tr onclick=genMap2();><td class='hfn'>Ruby General Hospital</td><td>5</td></tr><tr onclick=genMap2();><td class='hfn'>R G Kar Medical College and Hospital</td><td>5</td></tr><tr onclick=genMap2();><td class='hfn'>Medica Superspecialty Hospital</td><td>7</td></tr><tr onclick=genMap2();><td class='hfn'>Narayana Hospital, Howrah</td><td>10</td></tr><tr onclick=genMap2();><td class='hfn'>Sagore Dutta Hospital</td><td>13</td></tr>
+    </table>
+       
+        </div>
+        <div class = container2>
+            <iframe src="hos1map.html" width="1700px" height="900" >
+        </iframe>
+        </div>
+
+        </div>
+        <script>
+            const searchFun = () => {
+                let filter = document.getElementById('myinput').value.toUpperCase();
+
+                let myTable = document.getElementById('mytable');
+
+                let tr = myTable.getElementsByTagName('tr');
+
+                for (var i = 0; i < tr.length; i++) {
+                    let td = tr[i].getElementsByTagName('td')[0];
+
+                    if (td) {
+                        let textvalue = td.textContent || td.innerHTML;
+
+                        if (textvalue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        }
+                        else 
+                        {
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }
+            }
+            </script>
+            <script>
+             function genMap2(){
+            fetch('http://127.0.0.1:5000/map2')
+            .then(()=>window.location.href="info2.html")
+                        }
+            </script>
+    </body>
+    </html>
+    
