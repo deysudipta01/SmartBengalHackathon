@@ -9,7 +9,6 @@ from geopy.geocoders import ArcGIS
 from urllib.request import urlopen
 import pymongo
 
-
 nom = ArcGIS()
 
 
@@ -18,9 +17,6 @@ def generate_mapwithlist2():
     client = pymongo.MongoClient("mongodb+srv://sudipta01:Sudipta01@cluster0.pmtaryj.mongodb.net/ambulance")
     mydb = client["ambulance"]
     mycol = mydb["gari"]
-
-
-
 
     loc = "22.559628171320554,88.39632949346063"
 
@@ -41,7 +37,7 @@ def generate_mapwithlist2():
                 li1.append({'longitude': z['longitude'],
                             'latitude': z['latitude'], 'Name': z['Health Facility Name']})
                 li2.append(
-                    {'Name': z['Health Facility Name'],'Distance': int(int(dis) * 1.12)})
+                    {'Name': z['Health Facility Name'], 'Distance': int(int(dis) * 1.12)})
 
     # Map ka code
     hos_map = folium.Map(location=[lat, lon], zoom_start=12)
@@ -64,7 +60,7 @@ def generate_mapwithlist2():
 
     # List Ka Code
     li2.sort(key=lambda x: x["Distance"])
-    tbl = "<tr><td>car no</td><td>Distance</td></tr>"
+    tbl = "<tr><td>car no</td><td>Distance</td><td>Contact</td></tr>"
     c = 0
     for y in li2:
         if c == 8:
@@ -72,7 +68,9 @@ def generate_mapwithlist2():
 
         c = c + 1
         a = "<tr onclick='fetchRowData(\"%s\")'><td class='hfn'>%s</td>" % (y['Name'], y['Name'])
-        b = "<td>%s</td></tr>" % y['Distance']
+
+        b = "<td>%s</td>" % y['Distance']
+
 
         tbl = tbl + a + b
 
@@ -169,7 +167,7 @@ def generate_mapwithlist2():
 
     main(contents, filename)
 
-    #webbrowser.open(filename)
+    # webbrowser.open(filename)
     # webbrowser.open('info.html')
 
 # generate_mapwithlist()
