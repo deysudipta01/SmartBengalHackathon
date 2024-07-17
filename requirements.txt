@@ -25,7 +25,6 @@ Werkzeug==3.0.3
 Gunicorn
 pymongo
 folium
-geopy.distance
-math
-webbrowser
-ArcGIS
+
+
+
